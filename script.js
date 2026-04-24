@@ -169,7 +169,15 @@ function syncInputsToState() {
 
 function showError(key) {
   const el = $(`[data-error-for="${key}"]`);
-  if (el) el.classList.add("visible");
+  if (!el) return;
+
+  el.classList.add("visible");
+
+  // When validation fails, take the user directly to the relevant message.
+  // This is especially useful on mobile after pressing "التالي" without selecting a budget.
+  requestAnimationFrame(() => {
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
 }
 
 function hideError(key) {
