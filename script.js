@@ -90,7 +90,17 @@ function updateUI() {
     renderReview();
   }
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  // Scroll behavior:
+  // On mobile/tablet the brand panel sits above the form.
+  // After moving past the intro, keep the user at the form/progress area instead of jumping back to the hero panel.
+  const formPanel = document.querySelector(".form-panel");
+  const isStackedLayout = window.matchMedia("(max-width: 980px)").matches;
+
+  if (state.currentStep === 0 || !isStackedLayout || !formPanel) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    formPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function setSingleValue(field, value, element) {
