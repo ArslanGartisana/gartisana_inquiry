@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>استمارة طلب مشروع جديد | G.ARTISAN.A</title>
+  <meta name="description" content="استمارة طلب مشروع جديد لفهم نطاق العمل والهوية البصرية والخدمات الإضافية." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="brand-panel" aria-label="Brand panel">
+      <div class="brand-logo" aria-label="G.ARTISAN.A Logo">
+        <img src="logo-mark.svg" alt="G.ARTISAN.A Logo Mark" />
+      </div>
+      <p class="eyebrow">Strategic Logo & Brand Identity</p>
+      <h1>استمارة طلب مشروع جديد</h1>
+      <p>
+        تجربة قصيرة لفهم المشروع، الميزانية، الاتجاه البصري، والمخرجات المطلوبة.
+      </p>
+
+      <div class="mini-stats" aria-label="Form highlights">
+        <div>
+          <strong>01</strong>
+          <span>تأهيل واضح</span>
+        </div>
+        <div>
+          <strong>02</strong>
+          <span>Brief منظم</span>
+        </div>
+        <div>
+          <strong>03</strong>
+          <span>رسالة واتساب جاهزة</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <header class="topbar">
+        <div>
+          <span class="step-counter" id="stepCounter">الخطوة 1 من 12</span>
+          <div class="progress-track" aria-label="Progress">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+        <button class="ghost-button" type="button" id="resetBtn" title="إعادة ضبط الاستمارة">إعادة</button>
+      </header>
+
+      <form id="projectForm" novalidate>
+        <!-- Screen 0 -->
+        <section class="step active" data-step="0">
+          <div class="screen-intro">
+            <span class="screen-label">البداية</span>
+            <h2>لنبدأ مشروعك بشكل صحيح</h2>
+            <p>
+              هذه الاستمارة تساعدني على فهم مشروعك بدقة، حتى أستطيع تحديد احتياجاته
+              وتقديم الحل الأنسب له بشكل واضح واحترافي.
+            </p>
+            <div class="notice-box">
+              تعبئة الاستمارة تستغرق بضع دقائق فقط. سيتم استخدام المعلومات لفهم نطاق المشروع قبل التواصل، وليس لإعطاء سعر نهائي تلقائي.
+            </div>
+          </div>
+        </section>
+
+        <!-- Screen 1 -->
+        <section class="step" data-step="1">
+          <div class="screen-intro">
+            <span class="screen-label">الميزانية</span>
+            <h2>ما الميزانية المخصصة لهذا المشروع؟</h2>
+            <p>اختر الفئة الأقرب لميزانيتك. هذه الخطوة ضرورية حتى أستطيع فهم نطاق العمل المناسب من البداية.</p>
+            <div class="warning-line">لا يمكن الانتقال للخطوة التالية قبل تحديد الميزانية.</div>
+          </div>
+
+          <div class="cards-grid" data-required-group="budget">
+            <button type="button" class="option-card" data-field="budget" data-value="1200–2000 ₪">
+              <span class="card-icon">₪</span>
+              <strong>1200–2000 ₪</strong>
+              <small>مناسب للمشاريع الأساسية ضمن نطاق واضح ومحدد.</small>
+            </button>
+            <button type="button" class="option-card" data-field="budget" data-value="2000–3000 ₪">
+              <span class="card-icon">₪</span>
+              <strong>2000–3000 ₪</strong>
+              <small>مناسب لهوية أوسع أو مشروع يحتاج تفاصيل بصرية أكثر.</small>
+            </button>
+            <button type="button" class="option-card" data-field="budget" data-value="3000–5000 ₪">
+              <span class="card-icon">₪</span>
+              <strong>3000–5000 ₪</strong>
+              <small>مناسب لهوية بصرية متكاملة ومخرجات احترافية أوسع.</small>
+            </button>
+            <button type="button" class="option-card" data-field="budget" data-value="5000+ ₪">
+              <span class="card-icon">₪</span>
+              <strong>5000+ ₪</strong>
+              <small>مناسب للمشاريع المتقدمة أو التي تشمل أكثر من مرحلة ومخرجات متعددة.</small>
+            </button>
+          </div>
+          <p class="fine-print">هذه الفئات تقديرية، وقد يختلف السعر النهائي حسب نطاق العمل الفعلي.</p>
+          <p class="error-message" data-error-for="budget">يرجى اختيار الميزانية قبل المتابعة.</p>
+        </section>
+
+        <!-- Screen 2 -->
+        <section class="step" data-step="2">
+          <div class="screen-intro">
+            <span class="screen-label">الخدمة الأساسية</span>
+            <h2>ما نوع الخدمة التي تحتاجها؟</h2>
+            <p>اختر الخدمة الأساسية الأقرب لاحتياج مشروعك.</p>
+          </div>
+
+          <div class="cards-grid single-column" data-required-group="coreService">
+            <button type="button" class="option-card wide" data-field="coreService" data-value="هوية بصرية كاملة">
+              <span class="card-icon">◆</span>
+              <strong>هوية بصرية كاملة</strong>
+              <small>بناء هوية احترافية تشمل الشعار، الألوان، الخطوط، والأسلوب البصري العام للبراند.</small>
+            </button>
+            <button type="button" class="option-card wide" data-field="coreService" data-value="تطوير أو إعادة تصميم هوية حالية">
+              <span class="card-icon">↻</span>
+              <strong>تطوير أو إعادة تصميم هوية حالية</strong>
+              <small>تحسين هوية موجودة وإعادة تنظيمها بصريًا لتصبح أوضح وأقوى.</small>
+            </button>
+            <button type="button" class="option-card wide" data-field="coreService" data-value="خدمة تصميم لبراند قائم">
+              <span class="card-icon">✦</span>
+              <strong>خدمة تصميم لبراند قائم</strong>
+              <small>لديك براند جاهز وتحتاج مخرجات تصميم محددة أو تطويرات إضافية.</small>
+            </button>
+          </div>
+          <p class="error-message" data-error-for="coreService">يرجى اختيار نوع الخدمة الأساسية.</p>
+        </section>
+
+        <!-- Screen 3 -->
+        <section class="step" data-step="3">
+          <div class="screen-intro">
+            <span class="screen-label">خدمات إضافية</span>
+            <h2>هل تحتاج إلى خدمات إضافية؟</h2>
+            <p>يمكنك اختيار خدمة واحدة أو أكثر حسب احتياج مشروعك. الهوية البصرية تبقى الأساس، وهذه الخدمات يمكن إضافتها عند الحاجة.</p>
+          </div>
+
+          <div class="cards-grid">
+            <button type="button" class="option-card multi" data-field="addOns" data-value="تصميم موقع إلكتروني">
+              <span class="card-icon">⌂</span>
+              <strong>تصميم موقع إلكتروني</strong>
+              <small>تصميم واجهة موقع احترافية تعكس هوية البراند.</small>
+            </button>
+            <button type="button" class="option-card multi" data-field="addOns" data-value="تصميم Web App">
+              <span class="card-icon">▣</span>
+              <strong>تصميم Web App</strong>
+              <small>تصميم تجربة أو واجهة لتطبيق ويب مخصص حسب فكرة المشروع.</small>
+            </button>
+            <button type="button" class="option-card multi" data-field="addOns" data-value="تصاميم سوشيال ميديا">
+              <span class="card-icon">#</span>
+              <strong>تصاميم سوشيال ميديا</strong>
+              <small>تصميم منشورات أو قوالب بصرية متناسقة مع الهوية.</small>
+            </button>
+            <button type="button" class="option-card multi" data-field="addOns" data-value="تنظيم الشكل البصري لصفحة إنستجرام">
+              <span class="card-icon">▤</span>
+              <strong>تنظيم الشكل البصري لصفحة إنستجرام</strong>
+              <small>تحسين مظهر الصفحة من ناحية التصميم، التناسق، وأسلوب العرض فقط.</small>
+            </button>
+            <button type="button" class="option-card multi" data-field="addOns" data-value="مواد بصرية إضافية للبراند">
+              <span class="card-icon">✚</span>
+              <strong>مواد بصرية إضافية للبراند</strong>
+              <small>مثل بطاقات، أغلفة، عناصر بصرية، لافتات، أو مخرجات أخرى.</small>
+            </button>
+            <button type="button" class="option-card multi none-option" data-field="addOns" data-value="لا أحتاج إضافات حاليًا">
+              <span class="card-icon">—</span>
+              <strong>لا أحتاج إضافات حاليًا</strong>
+              <small>أريد التركيز فقط على الخدمة الأساسية في هذه المرحلة.</small>
+            </button>
+          </div>
+        </section>
+
+        <!-- Screen 4 -->
+        <section class="step" data-step="4">
+          <div class="screen-intro">
+            <span class="screen-label">تعريف المشروع</span>
+            <h2>أخبرني عن مشروعك</h2>
+            <p>هذه المعلومات تساعدني على فهم طبيعة المشروع قبل التواصل، وتختصر الكثير من الأسئلة لاحقًا.</p>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>اسم المشروع أو البراند *</span>
+              <input type="text" name="projectName" placeholder="مثال: اسم مطعم، متجر، منتج، شركة، أو مشروع شخصي" autocomplete="organization" />
+            </label>
+            <label>
+              <span>مجال العمل *</span>
+              <input type="text" name="industry" placeholder="مثال: مطعم، متجر، منتجات غذائية، تقنية، أزياء، خدمات، فندق..." />
+            </label>
+          </div>
+
+          <div class="field-block">
+            <span class="field-title">حالة المشروع *</span>
+            <div class="chips" data-required-group="projectStatus">
+              <button type="button" class="chip" data-field="projectStatus" data-value="مشروع جديد من الصفر">مشروع جديد من الصفر</button>
+              <button type="button" class="chip" data-field="projectStatus" data-value="مشروع قائم ويحتاج تطوير">مشروع قائم ويحتاج تطوير</button>
+              <button type="button" class="chip" data-field="projectStatus" data-value="براند موجود ويحتاج إعادة تنظيم">براند موجود ويحتاج إعادة تنظيم</button>
+              <button type="button" class="chip" data-field="projectStatus" data-value="فكرة ما زالت قيد التأسيس">فكرة ما زالت قيد التأسيس</button>
+            </div>
+          </div>
+
+          <label class="textarea-label">
+            <span>وصف مختصر للمشروع</span>
+            <textarea name="projectDescription" placeholder="ما الذي يقدمه مشروعك؟ وما الفكرة الأساسية التي تريد إيصالها؟"></textarea>
+          </label>
+
+          <p class="error-message" data-error-for="projectInfo">يرجى تعبئة اسم المشروع، مجال العمل، وحالة المشروع.</p>
+        </section>
+
+        <!-- Screen 5 -->
+        <section class="step" data-step="5">
+          <div class="screen-intro">
+            <span class="screen-label">الأهداف</span>
+            <h2>ما الهدف من هذا المشروع؟</h2>
+            <p>اختر الأهداف الأقرب لما تريد تحقيقه. يمكنك اختيار أكثر من خيار.</p>
+          </div>
+
+          <div class="chips multi-chips">
+            <button type="button" class="chip multi" data-field="goals" data-value="إطلاق براند جديد بشكل احترافي">إطلاق براند جديد بشكل احترافي</button>
+            <button type="button" class="chip multi" data-field="goals" data-value="تحسين صورة البراند الحالية">تحسين صورة البراند الحالية</button>
+            <button type="button" class="chip multi" data-field="goals" data-value="بناء هوية واضحة ومتناسقة">بناء هوية واضحة ومتناسقة</button>
+            <button type="button" class="chip multi" data-field="goals" data-value="الظهور بشكل أقوى أمام المنافسين">الظهور بشكل أقوى أمام المنافسين</button>
+            <button type="button" class="chip multi" data-field="goals" data-value="تنظيم الشكل البصري للمشروع">تنظيم الشكل البصري للمشروع</button>
+            <button type="button" class="chip multi" data-field="goals" data-value="التحضير لموقع إلكتروني أو Web App">التحضير لموقع إلكتروني أو Web App</button>
+            <button type="button" class="chip multi" data-field="goals" data-value="التحضير لمحتوى سوشيال ميديا احترافي">التحضير لمحتوى سوشيال ميديا احترافي</button>
+          </div>
+
+          <label class="textarea-label">
+            <span>ما المشكلة الحالية أو التحدي الأساسي؟</span>
+            <textarea name="challenge" placeholder="مثال: لا يوجد شعار واضح، الهوية غير متناسقة، الصفحة ضعيفة بصريًا، التصميم الحالي لا يعكس مستوى المشروع..."></textarea>
+          </label>
+        </section>
+
+        <!-- Screen 6 -->
+        <section class="step" data-step="6">
+          <div class="screen-intro">
+            <span class="screen-label">الجمهور والانطباع</span>
+            <h2>من هو جمهورك؟ وما الانطباع الذي تريد تركه؟</h2>
+            <p>كل براند يحتاج أن يتحدث بصريًا مع جمهوره بشكل صحيح. هذه الخطوة تساعدني على تحديد الاتجاه المناسب.</p>
+          </div>
+
+          <label class="textarea-label">
+            <span>من هو الجمهور المستهدف؟ *</span>
+            <textarea name="audience" placeholder="مثال: عائلات، شباب، أصحاب أعمال، جمهور محلي، جمهور فاخر، عملاء أونلاين..."></textarea>
+          </label>
+
+          <div class="field-block">
+            <span class="field-title">ما الانطباع الذي تريد أن يشعر به العميل؟</span>
+            <div class="chips multi-chips">
+              <button type="button" class="chip multi" data-field="impressions" data-value="حديث">حديث</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="بسيط">بسيط</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="فاخر">فاخر</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="جريء">جريء</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="تقني">تقني</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="أنيق">أنيق</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="هادئ">هادئ</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="موثوق">موثوق</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="إبداعي">إبداعي</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="قوي">قوي</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="واضح">واضح</button>
+              <button type="button" class="chip multi" data-field="impressions" data-value="منظم">منظم</button>
+            </div>
+          </div>
+
+          <label class="textarea-label">
+            <span>هل هناك شيء لا تريده في الاتجاه البصري؟</span>
+            <textarea name="visualDonts" placeholder="مثال: لا أريد ألوانًا صاخبة، لا أريد طابعًا طفوليًا، لا أريد أن يبدو البراند تقليديًا جدًا..."></textarea>
+          </label>
+
+          <p class="error-message" data-error-for="audience">يرجى كتابة وصف بسيط للجمهور المستهدف.</p>
+        </section>
+
+        <!-- Screen 7 -->
+        <section class="step" data-step="7">
+          <div class="screen-intro">
+            <span class="screen-label">الاتجاه البصري</span>
+            <h2>ما الاتجاه البصري الأقرب لما تبحث عنه؟</h2>
+            <p>اختر النمط الأقرب لذوقك أو لطبيعة المشروع. لاحقًا يمكن استبدال هذه البطاقات بأمثلة حقيقية من أعمالي.</p>
+          </div>
+
+          <div class="visual-grid">
+            <button type="button" class="visual-card multi" data-field="visualStyles" data-value="Minimal">
+              <span class="visual-placeholder">M</span>
+              <strong>Minimal</strong>
+              <small>بسيط، نظيف، ويعتمد على المساحات الواضحة.</small>
+            </button>
+            <button type="button" class="visual-card multi" data-field="visualStyles" data-value="Modern">
+              <span class="visual-placeholder">N</span>
+              <strong>Modern</strong>
+              <small>حديث، متوازن، ومناسب للبراندات المعاصرة.</small>
+            </button>
+            <button type="button" class="visual-card multi" data-field="visualStyles" data-value="Bold">
+              <span class="visual-placeholder">B</span>
+              <strong>Bold</strong>
+              <small>جريء، ملفت، ويترك انطباعًا قويًا.</small>
+            </button>
+            <button type="button" class="visual-card multi" data-field="visualStyles" data-value="Premium">
+              <span class="visual-placeholder">P</span>
+              <strong>Premium</strong>
+              <small>راقٍ، هادئ، ويعكس مستوى احترافي أعلى.</small>
+            </button>
+            <button type="button" class="visual-card multi" data-field="visualStyles" data-value="Tech">
+              <span class="visual-placeholder">T</span>
+              <strong>Tech</strong>
+              <small>منظم، ذكي، ومناسب للمشاريع التقنية أو الرقمية.</small>
+            </button>
+            <button type="button" class="visual-card multi" data-field="visualStyles" data-value="Elegant">
+              <span class="visual-placeholder">E</span>
+              <strong>Elegant</strong>
+              <small>أنيق، ناعم، ويعتمد على تفاصيل مدروسة.</small>
+            </button>
+          </div>
+
+          <label class="textarea-label">
+            <span>هل لديك مراجع أو أمثلة بصرية تحبها؟</span>
+            <textarea name="references" placeholder="يمكنك ذكر أسماء براندات، روابط، أو وصف الاتجاه الذي يعجبك. ويمكنك إرسال الصور لاحقًا أثناء التواصل."></textarea>
+          </label>
+        </section>
+
+        <!-- Screen 8 -->
+        <section class="step" data-step="8">
+          <div class="screen-intro">
+            <span class="screen-label">المخرجات</span>
+            <h2>ما المخرجات التي تتوقع أنك قد تحتاجها؟</h2>
+            <p>اختر العناصر التي قد تحتاجها ضمن المشروع. هذا يساعدني على تقدير نطاق العمل بشكل أوضح.</p>
+          </div>
+
+          <div class="chips multi-chips compact">
+            <button type="button" class="chip multi" data-field="deliverables" data-value="تصميم شعار">تصميم شعار</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="نظام ألوان">نظام ألوان</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="نظام خطوط">نظام خطوط</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="هوية بصرية متكاملة">هوية بصرية متكاملة</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="قوالب سوشيال ميديا">قوالب سوشيال ميديا</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="تصميم بوستات">تصميم بوستات</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="تنظيم شكل صفحة إنستجرام">تنظيم شكل صفحة إنستجرام</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="بطاقة عمل">بطاقة عمل</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="تغليف / Packaging">تغليف / Packaging</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="دليل استخدام الهوية">دليل استخدام الهوية</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="عناصر بصرية مساندة">عناصر بصرية مساندة</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="لافتات / Signage">لافتات / Signage</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="واجهة موقع إلكتروني">واجهة موقع إلكتروني</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="واجهة Web App">واجهة Web App</button>
+            <button type="button" class="chip multi" data-field="deliverables" data-value="غير متأكد، أحتاج اقتراحًا مناسبًا">غير متأكد، أحتاج اقتراحًا مناسبًا</button>
+          </div>
+        </section>
+
+        <!-- Screen 9 -->
+        <section class="step" data-step="9">
+          <div class="screen-intro">
+            <span class="screen-label">الوقت</span>
+            <h2>متى تحتاج أن يبدأ أو يكتمل المشروع؟</h2>
+            <p>اختيار الوقت يساعدني على معرفة مدى استعجال المشروع وتنظيم الأولويات بشكل واقعي.</p>
+          </div>
+
+          <div class="cards-grid single-column" data-required-group="timeline">
+            <button type="button" class="option-card wide" data-field="timeline" data-value="خلال أسبوع">
+              <span class="card-icon">!</span>
+              <strong>خلال أسبوع</strong>
+              <small>للمشاريع العاجلة جدًا، وقد يعتمد القبول على توفر الوقت.</small>
+            </button>
+            <button type="button" class="option-card wide" data-field="timeline" data-value="خلال أسبوعين إلى شهر">
+              <span class="card-icon">2</span>
+              <strong>خلال أسبوعين إلى شهر</strong>
+              <small>مناسب لمعظم المشاريع ذات النطاق الواضح.</small>
+            </button>
+            <button type="button" class="option-card wide" data-field="timeline" data-value="خلال شهر إلى شهرين">
+              <span class="card-icon">1–2</span>
+              <strong>خلال شهر إلى شهرين</strong>
+              <small>مناسب لمشاريع الهوية المتكاملة أو المراحل المتعددة.</small>
+            </button>
+            <button type="button" class="option-card wide" data-field="timeline" data-value="أكثر من شهرين">
+              <span class="card-icon">+</span>
+              <strong>أكثر من شهرين</strong>
+              <small>مناسب للمشاريع الكبيرة أو التي تحتاج تخطيطًا أوسع.</small>
+            </button>
+            <button type="button" class="option-card wide" data-field="timeline" data-value="لا يوجد موعد محدد">
+              <span class="card-icon">∞</span>
+              <strong>لا يوجد موعد محدد</strong>
+              <small>المهم أن يتم العمل بشكل صحيح ومنظم.</small>
+            </button>
+          </div>
+
+          <label class="textarea-label">
+            <span>هل يوجد موعد إطلاق أو مناسبة مرتبطة بالمشروع؟</span>
+            <textarea name="launchDate" placeholder="مثال: افتتاح، حملة، إطلاق منتج، معرض، موسم معين..."></textarea>
+          </label>
+          <p class="error-message" data-error-for="timeline">يرجى اختيار الوقت المتوقع.</p>
+        </section>
+
+        <!-- Screen 10 -->
+        <section class="step" data-step="10">
+          <div class="screen-intro">
+            <span class="screen-label">التواصل</span>
+            <h2>معلومات التواصل</h2>
+            <p>اكتب بياناتك حتى أتمكن من مراجعة الطلب والتواصل معك بالطريقة المناسبة.</p>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>الاسم الكامل *</span>
+              <input type="text" name="fullName" placeholder="اكتب اسمك الكامل" autocomplete="name" />
+            </label>
+            <label>
+              <span>رقم الهاتف / واتساب *</span>
+              <input type="tel" name="phone" placeholder="مثال: 05XXXXXXXX" autocomplete="tel" />
+            </label>
+            <label>
+              <span>البريد الإلكتروني *</span>
+              <input type="email" name="email" placeholder="example@email.com" autocomplete="email" />
+            </label>
+            <label>
+              <span>المدينة / الدولة</span>
+              <input type="text" name="location" placeholder="مثال: الناصرة، حيفا، تل أبيب، خارج البلاد..." autocomplete="address-level2" />
+            </label>
+          </div>
+
+          <div class="field-block">
+            <span class="field-title">وسيلة التواصل المفضلة *</span>
+            <div class="chips" data-required-group="contactPreference">
+              <button type="button" class="chip" data-field="contactPreference" data-value="واتساب">واتساب</button>
+              <button type="button" class="chip" data-field="contactPreference" data-value="اتصال">اتصال</button>
+              <button type="button" class="chip" data-field="contactPreference" data-value="بريد إلكتروني">بريد إلكتروني</button>
+            </div>
+          </div>
+
+          <label class="textarea-label">
+            <span>ملاحظات إضافية</span>
+            <textarea name="notes" placeholder="أي تفاصيل إضافية تعتقد أنها مهمة قبل التواصل."></textarea>
+          </label>
+
+          <p class="error-message" data-error-for="contactInfo">يرجى تعبئة الاسم، رقم الواتساب، البريد الإلكتروني، ووسيلة التواصل المفضلة.</p>
+        </section>
+
+        <!-- Screen 11 Review -->
+        <section class="step" data-step="11">
+          <div class="screen-intro">
+            <span class="screen-label">المراجعة</span>
+            <h2>راجع معلوماتك قبل الإرسال</h2>
+            <p>تأكد من أن التفاصيل صحيحة، ثم اضغط إرسال. بعد الإرسال سيتم تجهيز رسالة واتساب جاهزة.</p>
+          </div>
+
+          <div class="review-box" id="reviewBox"></div>
+        </section>
+
+        <!-- Screen 12 Success -->
+        <section class="step" data-step="12">
+          <div class="success-card">
+            <div class="success-mark">✓</div>
+            <h2>تم تجهيز طلبك بنجاح</h2>
+            <p>شكرًا لك. تم تجهيز تفاصيل المشروع، وسيتم فتح واتساب الآن برسالة جاهزة لإرسالها.</p>
+            <button class="primary-button" type="button" id="openWhatsappAgain">فتح واتساب يدويًا</button>
+            <p class="fine-print">إذا لم يتم فتح واتساب تلقائيًا، اضغط على الزر أعلاه.</p>
+          </div>
+        </section>
+
+        <footer class="form-actions">
+          <button type="button" class="secondary-button" id="prevBtn">السابق</button>
+          <button type="button" class="primary-button" id="nextBtn">ابدأ الآن</button>
+        </footer>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
